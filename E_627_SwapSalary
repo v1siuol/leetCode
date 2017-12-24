@@ -1,0 +1,7 @@
+--8 / 8 test cases passed.
+--Status: Accepted
+--Runtime: 488 ms
+--You are here!
+--Your runtime beats 54.50 % of mysql submissions.
+
+UPDATE salary SET sex = CASE sex WHEN 'm' THEN 'f' ELSE 'm' END;
