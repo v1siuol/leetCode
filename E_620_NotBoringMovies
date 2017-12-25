@@ -1,0 +1,7 @@
+--8 / 8 test cases passed.
+--Status: Accepted
+--Runtime: 193 ms
+--You are here!
+--Your runtime beats 39.50 % of mysql submissions.
+
+SELECT * FROM cinema WHERE mod(id, 2) = 1 AND description != 'boring' ORDER BY rating DESC;
