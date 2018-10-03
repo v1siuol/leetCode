@@ -34,3 +34,8 @@ class Solution(object):
             elif target == nums[mid]:
                 return mid
         return -1
+
+print(Solution().searchInsert([1, 3, 5, 6], 5))
+print(Solution().searchInsert([1, 3, 5, 6], 2))
+print(Solution().searchInsert([1, 3, 5, 6], 7))
+print(Solution().searchInsert([1, 3, 5, 6], 0))

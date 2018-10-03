@@ -27,3 +27,6 @@ class Solution:
                 results.append(i)
             is_result = True
         return results
+
+
+print(Solution().selfDividingNumbers(1, 22))

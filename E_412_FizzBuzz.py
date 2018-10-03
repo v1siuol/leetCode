@@ -25,3 +25,5 @@ class Solution(object):
                 result.append(str(count))
             count += 1
         return result
+
+print(Solution().fizzBuzz(15))

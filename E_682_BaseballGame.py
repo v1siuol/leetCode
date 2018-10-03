@@ -28,3 +28,6 @@ class Solution:
             else:
                 result += int(ops[index])
         return result
+
+print(Solution().calPoints(["5","2","C","D","+"]))
+print(Solution().calPoints(["5","-2","4","C","D","9","+","+"]))

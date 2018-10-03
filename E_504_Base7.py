@@ -21,3 +21,7 @@ class Solution(object):
             re.append("-")
         re.reverse()
         return "".join(re)
+
+print(Solution().convertToBase7(100))
+print(Solution().convertToBase7(-7))
+print(Solution().convertToBase7(-8))

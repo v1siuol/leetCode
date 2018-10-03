@@ -26,3 +26,5 @@ class Solution(object):
                 v = str(v+1)
             re.append(v)
         return re
+
+print(Solution().findRelativeRanks([5,4,3,2,1]))

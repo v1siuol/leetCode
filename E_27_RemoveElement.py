@@ -21,3 +21,5 @@ class Solution(object):
             else:
                 i += 1
         return res
+
+print(Solution().removeElement([3,2,2,3], 3))

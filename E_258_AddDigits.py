@@ -15,3 +15,5 @@ class Solution(object):
         while re >= 10:
             re = sum(map(int, list(str(re))))
         return re
+
+print(Solution().addDigits(38))

@@ -26,3 +26,8 @@ class Solution(object):
         #print(r1, r2)
         #eval(a.split("+")[0], "*", a.split("+")[0])
         return str(r1)+"+"+str(r2)+"i"
+
+
+print(Solution().complexNumberMultiply("1+-1i", "1+1i"))
+print(Solution().complexNumberMultiply("1+1i", "1+1i"))
+print(Solution().complexNumberMultiply("1+-1i", "1+-1i"))

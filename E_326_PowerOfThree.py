@@ -17,3 +17,7 @@ class Solution(object):
         #return self.isPowerOfThree(float(n/3))
 
         return n > 0 and (1162261467 % n == 0)
+
+print(Solution().isPowerOfThree(19684))
+print(Solution().isPowerOfThree(45))
+

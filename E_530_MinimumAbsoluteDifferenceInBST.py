@@ -59,4 +59,3 @@ class Solution(object):
 
         #return min(a,b, self.getMinimumDifference(root.left), self.getMinimumDifference(root.right)), key=lambda x: x==-1)
         """
-        

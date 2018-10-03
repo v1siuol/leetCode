@@ -25,3 +25,9 @@ class Solution(object):
                     if j - 1 > -1 and grid[i][j-1] == 1:  # left
                         para -= 1
         return para
+
+print(Solution().islandPerimeter(
+[[0,1,0,0],
+ [1,1,1,0],
+ [0,1,0,0],
+ [1,1,0,0]]))

@@ -39,3 +39,21 @@ class Solution:
         else:
 
             return letters[mid + 1]
+
+
+print(Solution().nextGreatestLetter(["c", "f", "j"], 'a'))
+print(Solution().nextGreatestLetter(["c", "f", "j"], 'c'))
+print(Solution().nextGreatestLetter(["e","e","e","e","e","e","n","n","n","n"],"n"))
+print(Solution().nextGreatestLetter(["e","e","e","k","q","q","q","v","v","y"],"k"))
+
+assert Solution().nextGreatestLetter(["c", "f", "j"], 'a') == 'c'
+
+assert Solution().nextGreatestLetter(["c", "f", "j"], 'c') == 'f'
+assert Solution().nextGreatestLetter(["c", "f", "j"], 'd') == 'f'
+
+assert Solution().nextGreatestLetter(["c", "f", "j"], 'f') == 'j'
+assert Solution().nextGreatestLetter(["c", "f", "j"], 'g') == 'j'
+
+assert Solution().nextGreatestLetter(["c", "f", "j"], 'j') == 'c'
+assert Solution().nextGreatestLetter(["c", "f", "j"], 'k') == 'c'
+

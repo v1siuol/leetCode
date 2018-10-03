@@ -18,3 +18,7 @@ class Solution(object):
         elif word[0].isupper() and word[1:].islower():
             return True
         return False
+
+print(Solution().detectCapitalUse("USA"))
+print(Solution().detectCapitalUse("FlaG"))
+

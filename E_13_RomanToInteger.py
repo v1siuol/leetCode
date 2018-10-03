@@ -29,3 +29,7 @@ class Solution(object):
             temp = temp[1:]
             re += dic[temp]
         return re
+
+print(Solution().romanToInt("I"))
+print(Solution().romanToInt("DCXXI"))
+print(Solution().romanToInt("MCMXCVI"))

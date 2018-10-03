@@ -13,3 +13,5 @@ class Solution(object):
         for i in s:
             l.remove(i)
         return l[0]
+
+print(Solution().findTheDifference("abcd", "eabcd"))

@@ -21,3 +21,6 @@ class Solution(object):
                 n //= 10
             n = re
         return n == 1
+
+print(Solution().isHappy(49))
+print(Solution().isHappy(-1))

@@ -13,3 +13,6 @@ class Solution(object):
         """
 
         return bin(n).count("1")
+
+print(Solution().hammingWeight(11))
+print(Solution().hammingWeight(-3))

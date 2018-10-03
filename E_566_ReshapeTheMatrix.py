@@ -42,3 +42,6 @@ class Solution(object):
                 i += 1
                 #print(re, i, j)
         return re
+
+print(Solution().matrixReshape([[1, 2], [3, 4]], 4, 1))
+

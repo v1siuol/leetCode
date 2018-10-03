@@ -20,3 +20,5 @@ class Solution(object):
                 i += 1
             i += 1
         return nums[-1]
+
+print(Solution().singleNumber([1,1,2,3,3]))

@@ -23,3 +23,6 @@ class Solution:
                 else:
                     magic_num = magic_num * 2 + 1
         return False
+
+
+print(Solution().hasAlternatingBits(10))

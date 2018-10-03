@@ -12,3 +12,6 @@ class Solution(object):
         :rtype: bool
         """
         return len(nums) != len(set(nums))
+
+print(Solution().containsDuplicate([1,1,2]))
+print(Solution().containsDuplicate([1,2]))

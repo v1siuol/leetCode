@@ -28,3 +28,5 @@ class Solution(object):
             else:
                 re += (j-1)
         return re
+
+print(Solution().longestPalindrome("abccccdd"))

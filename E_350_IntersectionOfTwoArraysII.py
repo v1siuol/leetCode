@@ -20,3 +20,5 @@ class Solution(object):
             except Exception:
                 pass
         return re
+
+print(Solution().intersect([1,2,2,1], [2,2]))

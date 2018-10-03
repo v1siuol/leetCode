@@ -20,3 +20,8 @@ class Solution(object):
             re += sTod[s[i]] * (26 ** (abs(i)-1))
             i -= 1
         return re
+
+print(Solution().titleToNumber("Z"))
+print(Solution().titleToNumber("AA"))
+print(Solution().titleToNumber("AB"))
+print(Solution().titleToNumber("BA"))

@@ -40,3 +40,5 @@ class Solution(object):
                         break
                     c += 1
         return re
+
+print(Solution().findWords(["Hello", "Alaska", "Dad", "Peace"]))

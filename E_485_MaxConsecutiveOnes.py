@@ -21,3 +21,6 @@ class Solution(object):
             else:
                 result = 0
         return temp
+
+
+print(Solution().findMaxConsecutiveOnes([1,1,1,0,1,1]))

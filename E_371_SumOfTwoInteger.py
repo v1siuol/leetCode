@@ -13,3 +13,5 @@ class Solution(object):
         :rtype: int
         """
         return sum([a,b])
+
+print(Solution().getSum(1,2))

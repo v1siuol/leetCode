@@ -25,4 +25,7 @@ class Solution(object):
                     return re
             i += 1
         return re
-        
+
+
+print(Solution().findContentChildren([1,2,3], [1,1]))
+print(Solution().findContentChildren([1,2], [1,2,3]))

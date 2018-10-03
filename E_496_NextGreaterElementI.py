@@ -23,3 +23,6 @@ class Solution(object):
             else:
                 re.append(-1)
         return re
+
+print(Solution().nextGreaterElement([4,1,2], [1,3,4,2]))
+print(Solution().nextGreaterElement([2,4], [1,2,3,4]))

@@ -19,3 +19,6 @@ class Solution(object):
             except ValueError:
                 return False
         return True
+
+print(Solution().canConstruct("aa", "aab"))
+print(Solution().canConstruct("aa", "ab"))

@@ -13,4 +13,5 @@ class Solution(object):
         """
         nums.sort()
         return nums[len(nums) // 2]
-        
+
+print(Solution().majorityElement())

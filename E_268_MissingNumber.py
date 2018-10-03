@@ -12,4 +12,5 @@ class Solution(object):
         :rtype: int
         """
         return sum(list(range(1, len(nums)+1))) - sum(nums)
-        
+
+print(Solution().missingNumber([0, 1, 3]))

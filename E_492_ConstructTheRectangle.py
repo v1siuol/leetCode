@@ -16,3 +16,5 @@ class Solution(object):
             l += 1
             w = area // l
         return[l, w]
+
+print(Solution().constructRectangle(5))

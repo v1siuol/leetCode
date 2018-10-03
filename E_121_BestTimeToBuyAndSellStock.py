@@ -47,3 +47,7 @@ class Solution(object):
                 #print(ma, mi, temp)
             return ma - mi
         return 0
+
+print(Solution().maxProfit([7, 1, 5, 3, 6, 4]))
+print(Solution().maxProfit([7, 6, 4, 3, 1]))
+print(Solution().maxProfit([4,7,1,2,11]))

@@ -60,3 +60,14 @@ class Solution(object):
             i += 1
         re.append(pt)
         return max(re)
+
+
+print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))  # 6
+#print(Solution().maxSubArray([-1]))  # -1
+print(Solution().maxSubArray([1,2,-1,-2,2,1,-2,1,4,-5,4]))  # 6
+print(Solution().maxSubArray([-3,1,0,-1,-2,3,2,-1]))  # 5
+print(Solution().maxSubArray([2,-3,1,3,-3,2,2,1]))  # 6
+print(Solution().maxSubArray([0,0,3,3,0,-2,3,-2,-1,-1,2,1]))  # 7
+print(Solution().maxSubArray([-9,-6,2,-5,-8,1,6,9,-8,0,5,5,    -4,7,4,1,7,-3,-1]))  # 33
+print(Solution().maxSubArray([1,-3,2,0,-1,0,-2,-3,1,2,-3,2]))  # 3
+print(Solution().maxSubArray([-9,-2,1,8,7,-6,4,9,-9,-5,0,5,-2,5,9,7]))  # 33

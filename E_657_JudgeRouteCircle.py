@@ -1,4 +1,6 @@
 """
+Author => v1siuol
+
 62 / 62 test cases passed.
 Status: Accepted
 Runtime: 145 ms
@@ -22,3 +24,9 @@ class Solution:
             elif 'D' == moves[i]:
                 d += 1
         return r == l and u == d
+
+
+    # 思路：挺好，用加减可以少两变量
+
+print(Solution().judgeCircle('uu'))
+

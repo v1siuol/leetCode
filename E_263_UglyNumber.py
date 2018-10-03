@@ -21,3 +21,7 @@ class Solution(object):
         while (num % 3) == 0:
             num //= 3
         return num == 1
+
+print(Solution().isUgly(6))
+print(Solution().isUgly(1))
+print(Solution().isUgly(14))

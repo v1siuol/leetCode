@@ -13,3 +13,5 @@ class Solution(object):
         :rtype: List[int]
         """
         return list(set(nums1) & set(nums2))
+
+print(Solution().intersection([1,2,2,1], [2,2]))

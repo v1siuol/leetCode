@@ -14,3 +14,4 @@ class Solution(object):
         result = list(s)
         result.reverse()
         return "".join(result)
+print(Solution().reverseString("hello"))

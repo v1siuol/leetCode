@@ -20,3 +20,5 @@ class Solution(object):
                 result += 2 ** count
             count += 1
         return result
+
+print(Solution().findComplement(5))

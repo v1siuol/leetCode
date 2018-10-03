@@ -22,3 +22,9 @@ class Solution(object):
             re += (jc(n-i+(i>>1)) / jc(i>>1) / jc(n-i))
             i += 2
         return int(re)
+
+print(Solution().climbStairs(6))  # 13
+print(Solution().climbStairs(7))  # 21
+print(Solution().climbStairs(8))  # 34
+print(Solution().climbStairs(9))  # 55
+print(Solution().climbStairs(1))

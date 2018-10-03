@@ -56,3 +56,8 @@ class Solution(object):
             r = tnum[2:]
             f = "0" * (32-len(r)) + r
         return cnm(f)
+
+
+print(Solution().toHex(26))
+print(Solution().toHex(-1))
+print(Solution().toHex(12))

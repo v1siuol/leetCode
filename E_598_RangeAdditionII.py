@@ -27,3 +27,9 @@ class Solution(object):
             return minX * minY
         else:
             return m * n
+
+
+
+
+print(Solution().maxCount(3, 3, [[2,2],[3,3]]))
+print(Solution().maxCount(3, 3, [[]]))

@@ -50,3 +50,5 @@ class Solution(object):
                 adM = "0"+str(m) if m < 10 else str(m)
                 re.append(str(h)+":"+adM)
         return re
+
+print(Solution().readBinaryWatch(1))

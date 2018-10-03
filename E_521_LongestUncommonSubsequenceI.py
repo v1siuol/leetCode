@@ -16,3 +16,5 @@ class Solution(object):
             return max(len(a), len(b))
         else:
             return -1
+
+print(Solution().findLUSlength("aba", "cdc"))

@@ -26,3 +26,7 @@ class Solution(object):
             else:
                 di[i] -= 1
         return sum(di.values()) == 0
+
+print(Solution().isAnagram("anagram", "nagaram"))
+print(Solution().isAnagram("rat", "car"))
+

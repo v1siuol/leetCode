@@ -37,3 +37,5 @@ class Solution(object):
                 re += s[i:]
                 break
         return re
+
+print(Solution().reverseStr("abcdefg", 2))

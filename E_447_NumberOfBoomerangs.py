@@ -37,3 +37,6 @@ class Solution(object):
                     re += c(i)
                     #re += i
         return int(re) * 2
+
+print(Solution().numberOfBoomerangs([[0,0],[1,0],[2,0]]))
+print(Solution().numberOfBoomerangs([[0,0],[1,0],[-1,0],[0,1],[0,-1]])) # 20

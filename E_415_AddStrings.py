@@ -22,4 +22,5 @@ class Solution(object):
         return str(conv(num1) + conv(num2))
         """
         return str(eval(num1 + "+" + num2))
-    
+
+print(Solution().addStrings("2", "2"))

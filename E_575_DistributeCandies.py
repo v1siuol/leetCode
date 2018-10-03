@@ -14,3 +14,6 @@ class Solution(object):
         lst = len(candies)
         st = len(set(candies))
         return st if st < lst / 2 else lst // 2
+
+print(Solution().distributeCandies([1,1,2,2,3,3]))
+print(Solution().distributeCandies([1,1,2,3]))
