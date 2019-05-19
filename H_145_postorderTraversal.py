@@ -1,3 +1,9 @@
+"""
+Success
+Details 
+Runtime: 52 ms, faster than 12.16% of Python3 online submissions for Binary Tree Postorder Traversal.
+Memory Usage: 13.1 MB, less than 61.63% of Python3 online submissions for Binary Tree Postorder 
+"""
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, x):
@@ -6,22 +12,18 @@
 #         self.right = None
 
 class Solution:
-    def inorderTraversal(self, root: 'TreeNode') -> 'List[int]':
+    def postorderTraversal(self, root: 'TreeNode') -> 'List[int]':
+        stack = [root]
         ret = []
 
-        self.helper(root, ret)
-        return ret
+        while stack:
+            node = stack.pop()
+            if node is not None:
+                ret.append(node.val)
+                if node.left is not None:
+                    stack.append(node.left)
+                if node.right is not None:
+                    stack.append(node.right)
 
-
-    def helper(curr, lst):
-
-        if curr is not None:
-
-            if curr.left is not None:
-                self.helper(curr.left, lst)
-
-            lst.append(curr.val)
-
-            if curr.right is not None:
-                self.helper(curr.right, lst)
+        return ret[::-1]
 
