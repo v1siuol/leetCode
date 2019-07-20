@@ -1,42 +1,60 @@
-"""
-987 / 987 test cases passed.
-Status: Accepted
-Runtime: 260 ms
-You are here! 
-Your runtime beats 15.55 % of python submissions.
-"""
-import collections
-class Solution(object):
-    def lengthOfLongestSubstring(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
-        head, tail = -1, 0
-        hash_char = collections.OrderedDict()
-        res = 0
-        n = len(s)
-        i = 0
-        while i < n:
-            if s[i] not in hash_char:
-                hash_char[s[i]] = True
-                tail = i
-                if tail - head > res:
-                    res = tail - head
-            else:
-                out = hash_char.popitem(last=False)
-                head += 1
-                while out[0] != s[i]:
-                    out = hash_char.popitem(last=False)
-                    head += 1
-                hash_char[s[i]] = True
-                tail = i
+from __future__ import annotations 
+import collections 
+import random 
+import heapq 
 
-            i += 1
-        return res
+"""
+Success
+Details 
+Runtime: 76 ms, faster than 55.97% of Python3 online submissions for Longest Substring Without Repeating Characters.
+Memory Usage: 13.4 MB, less than 13.25% of Python3 online submissions for Longest Substring Without Repeating Characters.
+"""
 
-print(Solution().lengthOfLongestSubstring("au"))  # 2
-print(Solution().lengthOfLongestSubstring("abcabcbb"))  # 3
-print(Solution().lengthOfLongestSubstring("bbb"))  # 1
-print(Solution().lengthOfLongestSubstring(" "))  # 1
-print(Solution().lengthOfLongestSubstring(""))  # 0
+# class Solution:
+#     def lengthOfLongestSubstring(self, s: str) -> int:
+#         # 看了diss 主要有set跟dict两种 
+#         # Time: O(n)
+#         # Space: O(n)
+
+#         ret = 0
+#         used = set()
+
+#         left = 0
+#         right = 0
+
+#         while right < len(s):
+#             if s[right] in used:
+#                 used.remove(s[left])
+#                 left += 1
+#             else:
+#                 used.add(s[right])
+#                 ret = max(ret, len(used))
+#                 right += 1
+
+#         return ret 
+
+
+
+"""
+Success
+Details 
+Runtime: 52 ms, faster than 98.28% of Python3 online submissions for Longest Substring Without Repeating Characters.
+Memory Usage: 13.1 MB, less than 96.64% of Python3 online submissions for Longest Substring Without Repeating Characters.
+"""
+
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        # 看了diss 主要有set跟dict两种 
+        # Time: O(n)
+        # Space: O(n)
+        ret = 0
+        left = -1
+        dct = dict()
+
+        for idx, char in enumerate(s):
+            if char in dct:
+                left = max(left, dct[char])
+            dct[char] = idx
+            ret = max(ret, idx-left)
+
+        return ret 
