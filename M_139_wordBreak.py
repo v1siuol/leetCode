@@ -1,3 +1,10 @@
+from __future__ import annotations 
+import collections 
+import random 
+import heapq 
+import re
+
+
 """
 Success
 Details 
@@ -33,3 +40,17 @@ s = "catsandog"
 wordDict = ["cats", "dog", "sand", "and", "cat"]
 print(S.wordBreak(s, wordDict))
 
+
+# # TLE
+# class Solution:
+#     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
+#         words = set(wordDict)
+#         return is_concat(s, words)
+
+# def is_concat(s, words):
+#     if s in words:
+#         return True
+#     for i in range(len(s)):
+#         if s[:i] in words and is_concat(s[i:], words):
+#             return True
+#     return False

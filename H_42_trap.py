@@ -48,26 +48,60 @@ Runtime: 56 ms, faster than 17.54% of Python3 online submissions for Trapping Ra
 Memory Usage: 14.5 MB, less than 5.10% of Python3 online submissions for Trapping Rain Water.
 """
 
+# class Solution:
+#     def trap(self, height: List[int]) -> int:
+#         left = 0
+#         right = len(height)-1
+#         left_max = 0
+#         right_max = 0
+#         ret = 0
+
+#         while left < right:
+#             if height[left] < height[right]:
+#                 if height[left] <= left_max:
+#                     ret += left_max - height[left]
+#                 else:
+#                     left_max = height[left]
+#                 left += 1
+#             else:
+#                 if height[right] <= right_max:
+#                     ret += right_max - height[right]
+#                 else:
+#                     right_max = height[right]
+#                 right -= 1
+
+#         return ret 
+
+
+"""
+Success
+Details 
+Runtime: 60 ms, faster than 74.68% of Python3 online submissions for Trapping Rain Water.
+Memory Usage: 14.6 MB, less than 6.98% of Python3 online submissions for Trapping Rain Water.
+"""
+
 class Solution:
     def trap(self, height: List[int]) -> int:
-        left = 0
-        right = len(height)-1
+        # O(n)
+        # O(1)
+        left_idx = 0
+        right_idx = len(height) - 1
         left_max = 0
         right_max = 0
-        ret = 0
+        res = 0
 
-        while left < right:
-            if height[left] < height[right]:
-                if height[left] <= left_max:
-                    ret += left_max - height[left]
+        while left_idx < right_idx:
+            if height[left_idx] < height[right_idx]:
+                if height[left_idx] <= left_max:
+                    res += left_max - height[left_idx]
                 else:
-                    left_max = height[left]
-                left += 1
+                    left_max = height[left_idx]
+                left_idx += 1
             else:
-                if height[right] <= right_max:
-                    ret += right_max - height[right]
+                if height[right_idx] <= right_max:
+                    res += right_max - height[right_idx]
                 else:
-                    right_max = height[right]
-                right -= 1
+                    right_max = height[right_idx]
+                right_idx -= 1
 
-        return ret 
+        return res

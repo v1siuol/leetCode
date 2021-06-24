@@ -88,30 +88,72 @@ Runtime: 32 ms, faster than 86.14% of Python3 online submissions for Spiral Matr
 Memory Usage: 13.8 MB, less than 5.18% of Python3 online submissions for Spiral Matrix.
 """
 
+# class Solution:
+#     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+#         if len(matrix) == 0 or len(matrix[0]) == 0:
+#             return []
+#         r1 = 0
+#         c1 = 0
+#         r2 = len(matrix) - 1
+#         c2 = len(matrix[0]) - 1
+#         ret = []
+
+#         while r1 <= r2 and c1 <= c2:
+#             for j in range(c1, c2+1):
+#                 ret.append(matrix[r1][j])
+#             for i in range(r1+1, r2+1):
+#                 ret.append(matrix[i][c2])
+#             if r1 < r2 and c1 < c2:
+#                 for j in range(c2-1, c1,-1):
+#                     ret.append(matrix[r2][j])
+#                 for i in range(r2, r1,-1):
+#                     ret.append(matrix[i][c1])
+
+#             r1 += 1
+#             r2 -= 1
+#             c1 += 1
+#             c2 -= 1
+
+#         return ret 
+
+
+"""
+Success
+Details 
+Runtime: 28 ms, faster than 98.10% of Python3 online submissions for Spiral Matrix.
+Memory Usage: 12.7 MB, less than 100.00% of Python3 online submissions for Spiral Matrix.
+"""
 class Solution:
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
-        if len(matrix) == 0 or len(matrix[0]) == 0:
+        if len(matrix) == 0:
             return []
-        r1 = 0
+
         c1 = 0
-        r2 = len(matrix) - 1
-        c2 = len(matrix[0]) - 1
-        ret = []
+        r1 = 0
 
-        while r1 <= r2 and c1 <= c2:
+        r2 = len(matrix)-1
+        c2 = len(matrix[0]) -1
+
+        res = []
+        while c1 <= c2 and r1 <= r2:
+
             for j in range(c1, c2+1):
-                ret.append(matrix[r1][j])
+                res.append(matrix[r1][j])
+
             for i in range(r1+1, r2+1):
-                ret.append(matrix[i][c2])
-            if r1 < r2 and c1 < c2:
-                for j in range(c2-1, c1,-1):
-                    ret.append(matrix[r2][j])
-                for i in range(r2, r1,-1):
-                    ret.append(matrix[i][c1])
+                res.append(matrix[i][c2])
 
-            r1 += 1
-            r2 -= 1
+            if r1 < r2 and c1 < c2:  # !!!! 
+
+                for j in reversed(range(c1+1, c2)):
+                    res.append(matrix[r2][j])
+
+                for i in reversed(range(r1+1, r2+1)):
+                    res.append(matrix[i][c1])
+
             c1 += 1
+            r1 += 1
             c2 -= 1
+            r2 -= 1
 
-        return ret 
+        return res

@@ -20,6 +20,63 @@ Memory Usage: 24.5 MB, less than 5.98% of Python3 online submissions for Seriali
 #         self.left = None
 #         self.right = None
 
+# class Codec:
+
+#     def serialize(self, root):
+#         """Encodes a tree to a single string.
+        
+#         :type root: TreeNode
+#         :rtype: str
+#         """
+#         def recur(root, ret):
+#             if root:
+#                 ret += str(root.val)+','
+#                 ret = recur(root.left, ret)
+#                 ret = recur(root.right, ret)
+#             else:
+#                 ret += 'null,'
+#             return ret
+
+#         return '['+recur(root, '')[:-1]+']'
+
+#     def deserialize(self, data):
+#         """Decodes your encoded data to tree.
+        
+#         :type data: str
+#         :rtype: TreeNode
+#         """
+#         def recur(data_lst):
+#             if data_lst[0] == 'null':
+#                 data_lst.pop(0)
+#                 return
+#             root = TreeNode(int(data_lst[0]))
+#             data_lst.pop(0)
+#             root.left = recur(data_lst)
+#             root.right = recur(data_lst)
+#             return root
+
+#         return recur(data[1:-1].split(','))
+
+
+# # Your Codec object will be instantiated and called as such:
+# # codec = Codec()
+# # codec.deserialize(codec.serialize(root))
+
+
+"""
+Success
+Details 
+Runtime: 108 ms, faster than 95.45% of Python3 online submissions for Serialize and Deserialize Binary Tree.
+Memory Usage: 17.5 MB, less than 100.00% of Python3 online submissions for Serialize and Deserialize Binary Tree.
+"""
+
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
 class Codec:
 
     def serialize(self, root):
@@ -28,35 +85,35 @@ class Codec:
         :type root: TreeNode
         :rtype: str
         """
-        def recur(root, ret):
+        def recur(root):
             if root:
-                ret += str(root.val)+','
-                ret = recur(root.left, ret)
-                ret = recur(root.right, ret)
+                nodes.append(str(root.val))
+                recur(root.left)
+                recur(root.right)
             else:
-                ret += 'null,'
-            return ret
-
-        return '['+recur(root, '')[:-1]+']'
-
+                nodes.append('#')
+        nodes = []
+        recur(root)
+        return ' '.join(nodes)
+        
     def deserialize(self, data):
         """Decodes your encoded data to tree.
         
         :type data: str
         :rtype: TreeNode
         """
-        def recur(data_lst):
-            if data_lst[0] == 'null':
-                data_lst.pop(0)
-                return
-            root = TreeNode(int(data_lst[0]))
-            data_lst.pop(0)
-            root.left = recur(data_lst)
-            root.right = recur(data_lst)
+        def recur():
+            val = next(nodes)
+            if val == '#':
+                return None
+            root = TreeNode(val)
+            root.left = recur()
+            root.right = recur()
             return root
 
-        return recur(data[1:-1].split(','))
-
+        nodes = iter(data.split())
+        return recur()
+        
 
 # Your Codec object will be instantiated and called as such:
 # codec = Codec()

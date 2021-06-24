@@ -85,6 +85,50 @@ Memory Usage: 13.2 MB, less than 48.01% of Python3 online submissions for Next P
 """
 
 # 奇妙的做法 
+# class Solution:
+#     def nextPermutation(self, nums: List[int]) -> None:
+#         """
+#         Do not return anything, modify nums in-place instead.
+#         """
+#         n = len(nums)
+#         j = n - 1
+#         while j > 0:
+#             if nums[j] > nums[j-1]:
+#                 # find
+#                 break
+#             j -= 1
+#         # 123
+#         #   j
+#         #   i
+
+#         if j == 0:
+#             reverse(nums, 0, n-1)
+#         else:
+#             val = nums[j-1]
+#             i = n-1
+#             while i >= j:
+#                 if nums[i] > val:
+#                     break
+#                 i -= 1
+#             swap(nums, i, j-1)
+#             reverse(nums, j, n-1)
+
+# def swap(nums, i, j):
+#     nums[i], nums[j] = nums[j], nums[i]
+
+# def reverse(nums, start, end):
+#     if start > end:
+#         return 
+#     for i in range(start, (start+end)//2+1):
+#         swap(nums, i, start+end-i)
+
+
+"""
+Success
+Details 
+Runtime: 36 ms, faster than 99.43% of Python3 online submissions for Next Permutation.
+Memory Usage: 12.6 MB, less than 100.00% of Python3 online submissions for Next Permutation.
+"""
 class Solution:
     def nextPermutation(self, nums: List[int]) -> None:
         """
@@ -92,32 +136,28 @@ class Solution:
         """
         n = len(nums)
         j = n - 1
-        while j > 0:
-            if nums[j] > nums[j-1]:
-                # find
-                break
+
+        while j > 0 and nums[j] <= nums[j-1]:
             j -= 1
-        # 123
-        #   j
-        #   i
 
         if j == 0:
             reverse(nums, 0, n-1)
         else:
-            val = nums[j-1]
-            i = n-1
-            while i >= j:
-                if nums[i] > val:
+            # find next big 
+            small_val = nums[j-1]
+            reverse_start = j
+            while j <= n-1:
+                if nums[j] <= small_val:
                     break
-                i -= 1
-            swap(nums, i, j-1)
-            reverse(nums, j, n-1)
+                j += 1
+
+            swap(nums, reverse_start-1, j-1)
+            reverse(nums, reverse_start, n-1)
+
 
 def swap(nums, i, j):
     nums[i], nums[j] = nums[j], nums[i]
 
-def reverse(nums, start, end):
-    if start > end:
-        return 
-    for i in range(start, (start+end)//2+1):
-        swap(nums, i, start+end-i)
+def reverse(nums, i, j):
+    for k in range(i, ((i+j)//2) + 1):
+        swap(nums, k, i+j-k)

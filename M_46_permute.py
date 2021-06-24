@@ -49,15 +49,37 @@ Runtime: 52 ms, faster than 63.28% of Python3 online submissions for Permutation
 Memory Usage: 14 MB, less than 5.19% of Python3 online submissions for Permutations.
 """
 
+# class Solution:
+#     def permute(self, nums: List[int]) -> List[List[int]]:
+#         ret = []
+#         backtracking(nums, [], ret)
+#         return ret 
+
+# def backtracking(nums, path, ret):
+#     if not nums:
+#         ret.append(path)
+#         return 
+#     for i in range(len(nums)):
+#         backtracking(nums[:i]+nums[i+1:], path+[nums[i]], ret)
+
+
+"""
+Success
+Details 
+Runtime: 40 ms, faster than 96.54% of Python3 online submissions for Permutations.
+Memory Usage: 12.7 MB, less than 100.00% of Python3 online submissions for Permutations.
+"""
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
-        ret = []
-        backtracking(nums, [], ret)
-        return ret 
+        res = []
+        backtracking(nums, 0, res)
+        return res
 
-def backtracking(nums, path, ret):
-    if not nums:
-        ret.append(path)
-        return 
-    for i in range(len(nums)):
-        backtracking(nums[:i]+nums[i+1:], path+[nums[i]], ret)
+def backtracking(nums, start, res):
+    if start >= len(nums):
+        res.append(nums)
+        return
+    for i in range(start, len(nums)):
+        nums[i], nums[start] = nums[start], nums[i]
+        backtracking(nums[:], start+1, res)
+        nums[i], nums[start] = nums[start], nums[i]

@@ -37,11 +37,42 @@ Runtime: 112 ms, faster than 85.44% of Python3 online submissions for Group Anag
 Memory Usage: 17.5 MB, less than 20.87% of Python3 online submissions for Group Anagrams.
 """
 
+# class Solution:
+#     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+#         pass
+#         dct = collections.defaultdict(list)
+#         for word in strs:
+#             dct[tuple(sorted(word))].append(word)
+#         return list(dct.values())
+
+
+"""
+Success
+Details 
+Runtime: 92 ms, faster than 99.84% of Python3 online submissions for Group Anagrams.
+Memory Usage: 16.6 MB, less than 43.40% of Python3 online submissions for Group Anagrams.
+"""
+# 排序进字典
+# class Solution:
+#     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+#         ret = collections.defaultdict(list)
+#         for word in strs:
+#             ret[tuple(sorted(word))].append(word)
+#         return list(ret.values())
+
+
+"""
+Success
+Details 
+Runtime: 100 ms, faster than 96.77% of Python3 online submissions for Group Anagrams.
+Memory Usage: 16.5 MB, less than 45.28% of Python3 online submissions for Group Anagrams.
+"""
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        pass
-        dct = collections.defaultdict(list)
+        # O(nw log w) time O(n) space 
+        ana_dict = collections.defaultdict(list)
         for word in strs:
-            dct[tuple(sorted(word))].append(word)
-        return list(dct.values())
+            ana_dict[tuple(sorted(word))].append(word)
+        
+        return list(ana_dict.values())
 

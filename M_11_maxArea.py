@@ -65,21 +65,42 @@ Details
 Runtime: 68 ms, faster than 44.93% of Python3 online submissions for Container With Most Water.
 Memory Usage: 14.3 MB, less than 95.28% of Python3 online submissions for Container With Most Water.
 """
-class Solution:
-    def maxArea(self, height):
-        """
-        :type height: List[int]
-        :rtype: int
-        """
-        ret = 0 
-        left = 0
-        right = len(height)-1
-        while left < right:
-            ret = max(ret, min(height[left], height[right]) * (right-left))
+# class Solution:
+#     def maxArea(self, height):
+#         """
+#         :type height: List[int]
+#         :rtype: int
+#         """
+#         ret = 0 
+#         left = 0
+#         right = len(height)-1
+#         while left < right:
+#             ret = max(ret, min(height[left], height[right]) * (right-left))
 
-            if height[left] < height[right]:
+#             if height[left] < height[right]:
+#                 left += 1
+#             else:
+#                 right -= 1  
+
+#         return ret
+
+
+"""
+Success
+Details 
+Runtime: 156 ms, faster than 20.34% of Python3 online submissions for Container With Most Water.
+Memory Usage: 14.5 MB, less than 26.32% of Python3 online submissions for Container With Most Water.
+"""
+# 双指针矮的先走 可加快速移动优化 
+class Solution:
+    def maxArea(self, height: List[int]) -> int:
+        left = 0
+        right = len(height) - 1
+        curr_max = 0
+        while left < right:
+            curr_max = max(curr_max, (right-left)*min(height[left], height[right]) )
+            if height[left] <= height[right]:
                 left += 1
             else:
-                right -= 1  
-
-        return ret
+                right -= 1
+        return curr_max

@@ -71,14 +71,34 @@ When we find 5, then swap it with A[4].
 At last, the first place where its number is not right, return the place + 1.
 """
 
+# class Solution:
+#     def firstMissingPositive(self, nums: List[int]) -> int:
+#         n = len(nums)
+#         for i in range(n):
+#             while 0 < nums[i] <= n and nums[nums[i]-1] != nums[i]:
+#                 t = nums[i]-1
+#                 nums[i], nums[t] = nums[t], nums[i]
+#         for i, num in enumerate(nums):
+#             if num != i+1:
+#                 return i+1
+#         return n+1
+
+
+"""
+Success
+Details 
+Runtime: 20 ms, faster than 100.00% of Python3 online submissions for First Missing Positive.
+Memory Usage: 12.8 MB, less than 100.00% of Python3 online submissions for First Missing Positive.
+"""
 class Solution:
     def firstMissingPositive(self, nums: List[int]) -> int:
         n = len(nums)
         for i in range(n):
-            while 0 < nums[i] <= n and nums[nums[i]-1] != nums[i]:
-                t = nums[i]-1
+            while 0 < nums[i] <= n and nums[i] != nums[nums[i]-1]:
+                t = nums[i] - 1
                 nums[i], nums[t] = nums[t], nums[i]
+
         for i, num in enumerate(nums):
-            if num != i+1:
+            if i+1 != num:
                 return i+1
-        return n+1
+        return n + 1
